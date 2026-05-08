@@ -30,7 +30,7 @@ function App() {
       <button onClick={() => trocarDeTela('usuarios')}>Usuarios</button>
 
       <hr />
-      return {renderizar()}
+      {renderizar()}
     </>
   )
 }
