@@ -2,6 +2,7 @@ import { useEffect,useState } from "react"
 
 export default function Usuarios() {
     const [cont, setCont] = useState(0)
+   // const [usuarios, setUsuarios] = useStates([])
 
     const aumentar = () => {
         setCont(cont + 1)
@@ -18,8 +19,17 @@ export default function Usuarios() {
         }
         else if(cont === -10) {
             alert('Contador chegou a -10')
-        }
+        }}, [cont])
+        
+        useEffect(() => {
 
+        const buscarUsuario = async () => {
+            const resposta = await fetch('http://localhost:3000/usuarios')
+            const usuarios = await resposta.json()
+            console.log(usuarios);
+
+        }
+        buscarUsuario()
     }, [cont])
 
     return (
